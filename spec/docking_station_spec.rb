@@ -1,8 +1,8 @@
 require 'docking_station'
 
 describe DockingStation do
-  let(:bike){double :working_bike1, broken: false}
-  let(:broken_bike){double :broken_bike, broken: true}
+  let(:bike){double :working_bike1, broken?: false}
+  let(:broken_bike){double :broken_bike, broken?: true}
   let(:bike_two){double :working_bike2}
   let(:station){DockingStation.new(capacity: 2)}
 
