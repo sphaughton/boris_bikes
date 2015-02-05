@@ -40,9 +40,26 @@ module BikeContainer
     bikes.reject {|bike| bike.broken? }
   end
 
-  def accept(bike)
-    garage.dock(bike)
-    garage.fix_bikes
+  def list_broken_bikes
+    bikes
   end
+
+  def bike_van
+    @bike_van ||= []
+  end
+
+  def pickup_bike(broken_bikes)
+    bike_van << broken_bikes
+  end
+
+  def van_count
+    bike_van.count
+  end
+
+
+#  def accept(bike)
+#    garage.dock(bike)
+#    garage.fix_bikes
+#  end
 
 end

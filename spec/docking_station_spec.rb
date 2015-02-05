@@ -27,7 +27,7 @@ describe DockingStation do
     expect{ station.dock(bike) }.to raise_error(RuntimeError, 'Station is full')
   end
 
-  it "should not accept a bike if it's full" do
+  it "should not accept a bike if it's empty" do
     empty_station(station)
     expect{station.release(bike)}.to raise_error(RuntimeError, 'Station is empty')
   end
@@ -47,5 +47,13 @@ describe DockingStation do
     station.dock(broken_bike)
     expect(station.available_bikes).to eq([bike])
   end
+
+  it "should provide the list of broken bikes" do
+    broken_bike = Bike.new
+    broken_bike.break!
+    station.dock(broken_bike)
+    expect(station.list_broken_bikes).to eq([broken_bike])
+  end
+
 
 end
