@@ -1,4 +1,4 @@
-require_relative 'bike_container'
+require './lib/bike_container'
 
 class DockingStation
 

@@ -1,4 +1,4 @@
-require 'docking_station'
+require './lib/docking_station'
 
 describe DockingStation do
   let(:bike){double :working_bike, broken: false}
@@ -6,7 +6,6 @@ describe DockingStation do
   let(:station){DockingStation.new(capacity: 20)}
 
   it 'should accept a bike' do
-    expect(station.bike_count).to eq(0)
     station.dock(bike)
     expect(station.bike_count).to eq(1)
   end
@@ -18,27 +17,13 @@ describe DockingStation do
   end
 
   it "should know when it's full" do
-    expect(station).not_to be_full
-    fill_station(station)
-    expect(station).to be_full
-  end
-
-  it "should not accept a bike when it's full" do
-    fill_station(station)
+    20.times { station.dock(bike) }
     expect{ station.dock(bike) }.to raise_error(RuntimeError, 'Station is full')
   end
 
-  it "should not accept a bike if it's empty" do
-    empty_station(station)
-    expect{station.release(bike)}.to raise_error(RuntimeError, 'Station is empty')
-  end
-
-  def empty_station(station)
+  it "should not release a bike if it's empty" do
     0.times { station.dock(bike) }
-  end
-
-  def fill_station(station)
-    20.times { station.dock(bike) }
+    expect{station.release(bike)}.to raise_error(RuntimeError, 'Station is empty')
   end
 
   it "should provide the list of available bikes" do
@@ -51,6 +36,5 @@ describe DockingStation do
     station.dock(broken_bike)
     expect(station.list_broken_bikes).to eq([broken_bike])
   end
-
 
 end

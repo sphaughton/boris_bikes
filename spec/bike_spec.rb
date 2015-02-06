@@ -1,4 +1,4 @@
-require 'bike'
+require './lib/bike'
 
 describe Bike do 
 
@@ -7,7 +7,7 @@ describe Bike do
   it 'should not be broken after we create it' do
 
     expect(bike).not_to be_broken
-    
+
   end  
 
 
