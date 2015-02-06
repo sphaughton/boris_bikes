@@ -5,7 +5,7 @@ require "docking_station"
 describe Van do
 
 	let(:van){Van.new}
-	let(:broken_bike){Bike.new.break!}
+	let(:broken_bike){double :broken_bike, broken: true}
 	let(:station){DockingStation.new(capacity: 20)}
 
 	def fill_broken_bikes(station)
