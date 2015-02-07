@@ -40,7 +40,7 @@ module BikeContainer
     bikes.reject {|bike| bike.broken }
   end
 
-  def list_broken_bikes
+  def broken_bikes
     bikes
   end
 
