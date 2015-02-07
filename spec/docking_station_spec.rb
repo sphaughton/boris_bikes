@@ -34,7 +34,7 @@ describe DockingStation do
 
   it "should provide the list of broken bikes" do
     station.dock(broken_bike)
-    expect(station.list_broken_bikes).to eq([broken_bike])
+    expect(station.broken_bikes).to eq([broken_bike])
   end
 
 end

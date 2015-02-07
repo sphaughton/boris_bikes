@@ -20,7 +20,7 @@ class Van
   end
 
   def van_full?
-   	bike_van.count == VAN_DEFAULT_CAPACITY
+    bike_van.count == VAN_DEFAULT_CAPACITY
   end
 
 end
