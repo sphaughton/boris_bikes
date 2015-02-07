@@ -13,4 +13,4 @@ A person can rent a bike from one station and return it to another. A person can
 - [x] Class and tests for Bike
 - [x] Class and tests for Docking Station
 - [x] Class and tests for Van
-- [ ] Class and tests for Garage
+- [x] Class and tests for Garage
