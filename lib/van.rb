@@ -1,10 +1,6 @@
 require './lib/bike_container'
 
-class Van
-
-	VAN_DEFAULT_CAPACITY = 10
-
-	include BikeContainer
+class Van; include BikeContainer; VAN_DEFAULT_CAPACITY = 10
 
 	def bike_van
     @bike_van ||= []
