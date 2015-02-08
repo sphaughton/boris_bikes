@@ -1,6 +1,7 @@
 require './lib/docking_station'
 
 describe DockingStation do
+  
   let(:bike){double :working_bike, broken: false}
   let(:broken_bike){double :broken_bike, broken: true}
   let(:station){DockingStation.new(capacity: 20)}

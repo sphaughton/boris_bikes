@@ -9,7 +9,6 @@ class Garage; include BikeContainer
 	end
 
 	def dock(bike)
-		super
 		bike.fix!
 	end
 
