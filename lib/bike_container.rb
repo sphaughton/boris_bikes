@@ -44,9 +44,4 @@ module BikeContainer
     bikes
   end
 
-#  def accept(bike)
-#    garage.dock(bike)
-#    garage.fix_bikes
-#  end
-
 end
